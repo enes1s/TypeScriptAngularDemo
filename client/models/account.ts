@@ -34,6 +34,9 @@ module AppDemo {
 		}
 		
 		isBornFriday():boolean{
+			if(! this.dateOfBirth){
+				return false;
+			}
 			return this.dateOfBirth.getDay() == DaysOfWeek.Friday; 
 		}
 

@@ -11,7 +11,7 @@ module AppDemo {
 
 		static $inject = ["AccountService","$window"];
 		constructor(private accountService: IAccountService, $route) {
-			this.account = new Account;
+			this.account = new Account();
 			this.log = "";
 			this.maxDate = new Date();
 			this.window = $route;
