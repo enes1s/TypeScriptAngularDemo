@@ -4,6 +4,7 @@ module AppDemo{
 	export interface IAccountService {
 		save(account:IAccount) : ng.IPromise<ng.IHttpPromiseCallbackArg<boolean>>;
 		getAll():ng.IPromise<IAccount[]>;
+		getRegistered():ng.IPromise<IAccount>;
 		remove(id:number):ng.IPromise<number>;
 	}
 	
@@ -57,11 +58,14 @@ module AppDemo{
 							$dbService.add("users", account)
 								.then(
 									(id) => {
+										account.id = 0; // registered have only 0 as ID
+										$dbService.put("registered", account); //save to registered table	
 										deferred.resolve("Account " + id + "saved.");
 									},
 									(error) => {
 										deferred.reject(error);
 									});
+															
 							});
 			}; 
 			return deferred.promise;
@@ -72,6 +76,10 @@ module AppDemo{
 			return this.$dbService.all("users");
 		}	
 		
+		getRegistered(){
+			return this.$dbService.getById("registered",0);
+		}
+
 		remove(id:number){
 			return this.$dbService.remove("users",id);
 		}

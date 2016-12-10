@@ -12,6 +12,9 @@ angular.module('AppDemo').factory('dbService', [
 
                     var usersStore = db.createObjectStore("users", { keyPath: "id" });
                     usersStore.createIndex("id_idx", "id", { unique: true });
+                    
+                    var registeredUserStore = db.createObjectStore("registered", { keyPath: "id" });
+                    registeredUserStore.createIndex("id_idx", "id", { unique: true });                    
                 };
 
                 request.onsuccess = function() {

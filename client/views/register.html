@@ -1,36 +1,28 @@
 <md-content>
+	<p>Registration form</p>
+	<form ng-submit="vm.submit()" >
 
-	<md-content>
-		<form ng-submit="vm.submit()" >
-			<div >
-				<md-input-container class="md-block">
-					<label>Name</label>
-					<input ng-model="vm.account.name">
-				</md-input-container>
+			<md-input-container class="md-block">
+				<label>Name</label>
+				<input ng-model="vm.account.name">
+			</md-input-container>
 
-				<md-input-container class="md-block">
-					<label>Last Name</label>
-					<input ng-model="vm.account.lastName">
-				</md-input-container>
-
-
-
-				<md-input-container class="md-block">
-					<label>Address</label>
-					<input ng-model="vm.account.address">
-				</md-input-container>
-				<md-input-container class="md-block">
-					<label>Address</label>
-					<md-datepicker ng-model="vm.account.dateOfBirth" md-placeholder="Enter date" md-max-date="vm.maxDate" ng-model-options="{ timezone: 'utc' }"></md-datepicker>
-				</md-input-container>
-
-				<div>
-					<p>{{vm.log}}</p>
-				</div>
+			<md-input-container class="md-block">
+				<label>Last Name</label>
+				<input ng-model="vm.account.lastName">
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>Address</label>
+				<input ng-model="vm.account.address">
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>Date of birth</label>
+				<md-datepicker ng-model="vm.account.dateOfBirth" md-placeholder="Enter date" md-max-date="vm.maxDate" ng-model-options="{ timezone: 'utc' }"></md-datepicker>
+			</md-input-container>
+			<div>
+				<p>{{vm.log}}</p>
 			</div>
-			<md-button class="md-raised md-primary" type="submit">Register</md-button>
-		</form>
 
-	</md-content>
-
+		<md-button class="md-raised md-primary" type="submit">Register</md-button>
+	</form>
 </md-content>

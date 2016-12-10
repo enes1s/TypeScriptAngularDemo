@@ -7,16 +7,17 @@
 	<link rel="stylesheet" href="/content/css/site.css">
 </head>
 <body ng-app="AppDemo" ng-cloak>
-
-	<md-toolbar>
-		<div class="md-toolbar-tools">
-			<span ng-if="! registered">Angular TypeScript Demo App</span>
-			<span ng-if="registered" ng-class="registered.isBornFriday() ? 'green-friday':''">Hello, {{registered.lastName}} {{registered.name}}</span>
-			<span flex></span>
-			<md-button class="md-raised" href="#/register">Register</md-button>
-			<md-button class="md-raised" aria-label="Register" href="#/accounts">Accounts</md-button>
-		</div>
-	</md-toolbar>
+	<div ng-controller="RegisteredController as vm">
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<span ng-if="! vm.registered">Angular TypeScript Demo App</span>
+				<span ng-if="vm.registered" ng-class="vm.registered.isBornFriday() ? 'green-friday':''">Hello, {{vm.registered.lastName}} {{vm.registered.name}}</span>
+				<span flex></span>
+				<md-button class="md-raised" href="#/register">Register</md-button>
+				<md-button class="md-raised" aria-label="Register" href="#/accounts">Accounts</md-button>
+			</div>
+		</md-toolbar>
+	</div>
 	<div class="container" ng-view></div>
 
 	<script src="bower_components/angular/angular.js"></script>
@@ -32,6 +33,7 @@
 	<script src="client/services/dbservice.js"></script>
 	<script src="client/controllers/register.js"></script>
 	<script src="client/controllers/accounts.js"></script>
+	<script src="client/controllers/registered.js"></script>
 	<script src="client/models/account.js"></script>
 
 </body>
