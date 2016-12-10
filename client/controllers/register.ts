@@ -6,48 +6,34 @@ module AppDemo {
 		private account : IAccount;
 		private log:string;
 		private accounts : IAccount[];
-		static $inject = ["AccountService"];
-		constructor(private accountService: IAccountService) {
+		private rootScope;
+		public maxDate:Date;
+
+		static $inject = ["AccountService","$rootScope"];
+		constructor(private accountService: IAccountService, $rootScope: ng.IRootScopeService) {
 			this.account = new Account;
 			this.log = "";
+			this.maxDate = new Date();
+			this.rootScope = $rootScope;
 		}
 
 		submit() {
+			var rootScope = this.rootScope; 
+			var accountService = this.accountService;
 			this.accountService.save(this.account).then(
 				(result : string) => {
+					rootScope.registered = new Account();
+					rootScope.registered.name = this.account.name;
+					rootScope.registered.lastName = this.account.lastName;
+					rootScope.registered.dateOfBirth = this.account.dateOfBirth;
 					console.log(result);
 					this.log = result;
-					this.getAll();
+
 				},
 				(error : string) => {
 					console.log(error);
 					this.log = error;
 				});
-		}
-
-		getAll(){
-			this.accountService.getAll().then(
-				(result : IAccount[]) => {
-					this.accounts = result;
-				},
-				(error : string) => {
-					console.log(error);
-					this.log = error;
-				}
-			);
-		}
-
-		remove(id:number){
-			this.accountService.remove(id).then(
-				(id : number) => {
-					this.log = "Account with id " + id + " removed." 
-					this.getAll();
-				},
-				(error: string) => {
-					console.log(error);
-					this.log = error;
-				}
-			);
 		}
 
 	}

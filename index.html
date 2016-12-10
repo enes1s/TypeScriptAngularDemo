@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Demo Typescript App</title>
-    </head>
-    <body ng-app="AppDemo">
-		<div class="container" ng-view>
-			
-		</div>
-        <script src="bower_components/angular/angular.js"></script>
-		<script src="bower_components/angular-route/angular-route.js"></script>
-		<script src="client/app.module.js"></script>
-		<script src="client/app.route.js"></script>
-		<script src="client/services/accountservice.js"></script>
-		<script src="client/services/dbservice.js"></script>
-		<script src="client/controllers/register.js"></script>
-		<script src="client/models/account.js"></script>		
+<head>
+	<title>Angular Typescript Demo App</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+	<link rel="stylesheet" href="/content/css/site.css">
+</head>
+<body ng-app="AppDemo" ng-cloak>
 
-    </body>
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<span ng-if="! registered">Angular TypeScript Demo App</span>
+			<span ng-if="registered" ng-class="registered.isBornFriday() ? 'green-friday':''">Hello, {{registered.lastName}} {{registered.name}}</span>
+			<span flex></span>
+			<md-button class="md-raised" href="#/register">Register</md-button>
+			<md-button class="md-raised" aria-label="Register" href="#/accounts">Accounts</md-button>
+		</div>
+	</md-toolbar>
+	<div class="container" ng-view></div>
+
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-aria/angular-aria.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-material/angular-material.js"></script>
+	<script src="bower_components/moment/moment.js"></script>
+	<script src="client/app.module.js"></script>
+	<script src="client/app.route.js"></script>
+	<script src="client/app.date.locale.provider.js"></script>
+	<script src="client/services/accountservice.js"></script>
+	<script src="client/services/dbservice.js"></script>
+	<script src="client/controllers/register.js"></script>
+	<script src="client/controllers/accounts.js"></script>
+	<script src="client/models/account.js"></script>
+
+</body>
+
 </html>

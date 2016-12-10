@@ -2,5 +2,5 @@ module AppDemo {
 	"use strict";	
 
 	angular
-		.module("AppDemo", ["ngRoute"]);
+		.module("AppDemo", ["ngRoute","ngMaterial"]);
 }

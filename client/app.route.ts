@@ -9,6 +9,11 @@ module AppDemo {
                 controller: "RegisterController",
                 controllerAs: "vm"
             })
+            .when("/accounts", {
+                templateUrl: "/client/views/accounts.html",
+                controller: "AccountsController",
+                controllerAs: "vm"
+            })            
             .otherwise({
                 redirectTo: "/register"
             });

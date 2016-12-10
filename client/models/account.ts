@@ -18,7 +18,7 @@ module AppDemo {
 		name:string;
 		lastName:string;
 		address:string;
-		dateOfBirth: string;
+		dateOfBirth: Date;
 		isLegalAge():boolean;
 		isBornFriday():boolean;
 	}
@@ -28,22 +28,20 @@ module AppDemo {
 		name: string;
 		lastName: string;
 		address: string;
-		dateOfBirth: string;
+		dateOfBirth: Date;
 		isLegalAge():boolean{
 			return this.getAge() >= LegalAge;
 		}
 		
 		isBornFriday():boolean{
-			var birthDate = new Date(this.dateOfBirth);
-			return birthDate.getDay() == DaysOfWeek.Friday; 
+			return this.dateOfBirth.getDay() == DaysOfWeek.Friday; 
 		}
 
 		private getAge():number {
 			var today = new Date();
-			var birthDate = new Date(this.dateOfBirth);
-			var age = today.getFullYear() - birthDate.getFullYear();
-			var m = today.getMonth() - birthDate.getMonth();
-			if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+			var age = today.getFullYear() - this.dateOfBirth.getFullYear();
+			var m = today.getMonth() - this.dateOfBirth.getMonth();
+			if (m < 0 || (m === 0 && today.getDate() < this.dateOfBirth.getDate())) {
 				age--;
 			}
 			return age;

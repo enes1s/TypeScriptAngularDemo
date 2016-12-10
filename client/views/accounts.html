@@ -1,0 +1,18 @@
+<md-content>
+	<div ng-init="vm.getAll()">
+
+		<md-list flex>
+			<md-subheader class="md-no-sticky">Accounts</md-subheader>
+			<md-list-item class="md-3-line" ng-repeat="acc in vm.accounts" ng-click="null">
+				<div class="md-list-item-text" layout="row"  layout-align="space-around center">
+					<span>{{acc.id}}</span> <span>{{acc.name}} {{acc.lastName}}</span> 
+					<p>{{acc.address}}</p>
+					<p>{{acc.dateOfBirth | date:'yyyy-MM-dd'}}</p>
+					<md-button ng-click="vm.remove(acc.id)" class="md-raised md-warn">Delete</md-button>
+				</div>
+				<md-divider ng-if="!$last"></md-divider>				
+			</md-list-item>
+			<md-list>
+	</div>
+
+</md-content>
