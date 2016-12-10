@@ -1,0 +1,49 @@
+<form ng-submit="vm.submit()">
+	<div ng-init="vm.account.name = 'John'"></div>
+	<div ng-init="vm.account.lastName = 'Doe'"></div>
+	<div ng-init="vm.account.address = 'Test street 1'"></div>
+	<div ng-init="vm.account.dateOfBirth = '1992-02-28'"></div>
+	<div>
+		<label>Enter your name:
+			<input type="text" id="name" name="name" ng-model="vm.account.name" placeholder="John" required>
+		</label>
+		<br/>
+		<label>Enter your last name:
+			<input type="text" id="lastName" name="lastName" ng-model="vm.account.lastName" placeholder="Doe" >
+		</label>
+		<br/>
+		<label>Enter your address:
+			<input type="text" id="address" name="address" ng-model="vm.account.address" placeholder="Demo Street 1" >
+		</label>
+		<br/>
+		<label>Enter your date of birth:
+			<input type="text" id="dateOfBirth" name="dateOfBirth" ng-model="vm.account.dateOfBirth" placeholder="1990-12-31" required>
+		</label>
+		<div>
+			<p>{{vm.log}}</p>
+		</div>
+	</div>
+	<button type="submit">Register</button>
+</form>
+<table ng-init="vm.getAll()">
+	<thead>
+		<tr>
+			<td>Id</td>
+			<td>Name</td>
+			<td>LastName</td>
+			<td>Address</td>
+			<td>DateOfBirth</td>
+			<td></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="acc in vm.accounts">
+			<td>{{acc.id}}</td>
+			<td>{{acc.name}}</td>
+			<td>{{acc.lastName}}</td>
+			<td>{{acc.address}}</td>
+			<td>{{acc.dateOfBirth}}</td>
+			<td><button ng-click="vm.remove(acc.id)">X</button></td>
+		</tr>
+	</tbody>
+</table>

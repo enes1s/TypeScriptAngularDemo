@@ -83,3 +83,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+.vscode/settings.json
+bower_components
+node_modules
+client/**/*.js
+client/**/*.map

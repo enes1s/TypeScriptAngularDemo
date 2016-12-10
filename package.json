@@ -1,0 +1,20 @@
+{
+  "name": "angular-typescript-demo",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server"         
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "concurrently": "^3.1.0",
+    "lite-server": "^2.2.2",
+    "typescript": "^2.1.4"
+  },  
+  "author": "Enes Halilović",
+  "license": "MIT"
+}
