@@ -20,8 +20,9 @@ Demo using Angular 1.5.8, Typescript, IndexedDb as localStorage, Material Design
 
 ## Unit Tests
 
-* Install karma globaly "npm install -g karma-cli"
-* Run "karma start"
+Install karma globally "npm install -g karma-cli"
+
+    Run "karma start"
 
 ## Project Descriptions
 
@@ -31,4 +32,5 @@ In the project the following tools were used:
 * Angular 1.5.8
 * Angular Material
 * IndexedDB-Angularjs-Service borrowed from https://github.com/Velkata/IndexedDB-Angularjs-Service
-* 
+* Karma and Jasmine for unit testing
+ 
