@@ -15,9 +15,14 @@
 				<label>Address</label>
 				<input ng-model="vm.account.address" required>
 			</md-input-container>
-			<md-input-container class="md-block">
+			<md-input-container  ng-class="vm.account.isBornFriday() ? 'green-friday':'' ">
 				<label>Date of birth</label>
-				<md-datepicker ng-model="vm.account.dateOfBirth" md-placeholder="Enter date" md-max-date="vm.maxDate" ng-model-options="{ timezone: 'utc' }"></md-datepicker>
+				<md-datepicker 
+					ng-model="vm.account.dateOfBirth" 
+					md-placeholder="Enter date" 
+					md-max-date="vm.maxDate" 
+					ng-model-options="{ timezone: 'utc' }">
+				</md-datepicker>
 			</md-input-container>
 			<div>
 				<p>{{vm.log}}</p>

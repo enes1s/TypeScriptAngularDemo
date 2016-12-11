@@ -1,3 +1,10 @@
-span.green-friday{
-    background-color: green; 
+span.green-friday,
+md-input-container.green-friday
+{
+    background-color:limegreen; 
+}
+
+.md-input-container {
+  width: 80%;
+  margin-left: 0px;
 }

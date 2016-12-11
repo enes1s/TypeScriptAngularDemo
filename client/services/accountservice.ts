@@ -59,8 +59,15 @@ module AppDemo{
 								.then(
 									(id) => {
 										account.id = 0; // registered have only 0 as ID
-										$dbService.put("registered", account); //save to registered table	
-										deferred.resolve("Account " + id + "saved.");
+										$dbService.put("registered", account).then(
+											() => {
+												deferred.resolve("Account saved.");
+											},
+											(error) => {
+												deferred.reject(error);
+											}
+										); 	
+										
 									},
 									(error) => {
 										deferred.reject(error);
