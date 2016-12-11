@@ -4,8 +4,8 @@ Demo using Angular 1.5.8, Typescript, IndexedDb as localStorage, Material Design
 ## Prerequisites
 
 * npm - Included in node.js
-* bower - Install globaly with "npm install -g bower"
-* tsc  - Install globaly with "npm install -g typescript"
+* bower - Install globally with "npm install -g bower"
+* tsc  - Install globally with "npm install -g typescript"
 
 
 ## Installing
