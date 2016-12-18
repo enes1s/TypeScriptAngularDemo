@@ -1,20 +1,10 @@
 <md-content>
 	<p>Registration form</p>
-	<form ng-submit="vm.submit()" >
-
-			<md-input-container class="md-block">
-				<label>Name</label>
-				<input ng-model="vm.account.name" required>
-			</md-input-container>
-
-			<md-input-container class="md-block">
-				<label>Last Name</label>
-				<input ng-model="vm.account.lastName" required>
-			</md-input-container>
-			<md-input-container class="md-block">
-				<label>Address</label>
-				<input ng-model="vm.account.address" required>
-			</md-input-container>
+	<form name="registration" ng-submit="vm.submit()" novalidate >
+			<input type="text" ng-model="vm.message">
+			<app-input message="vm.account.name" label="Name"></app-input>
+			<app-input message="vm.account.lastName" label="Last Name"></app-input>
+			<app-input message="vm.account.address" label="Address"></app-input>
 			<md-input-container  ng-class="vm.account.isBornFriday() ? 'green-friday':'' ">
 				<label>Date of birth</label>
 				<md-datepicker 
@@ -31,3 +21,4 @@
 		<md-button class="md-raised md-primary" type="submit">Register</md-button>
 	</form>
 </md-content>
+<pre>{{vm | json}}</pre>

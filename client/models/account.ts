@@ -29,6 +29,25 @@ module AppDemo {
 		lastName: string;
 		address: string;
 		dateOfBirth: Date;
+		constructor();
+		constructor(
+			id:number, 
+			name:string,
+			lastName:string,
+			address:string, 
+			dateOfBirth:Date);
+		constructor(
+			id?:number, 
+			name?:string,
+			lastName?:string,
+			address?:string, 
+			dateOfBirth?:Date){
+			this.id = id || 0;
+			this.name = name || "";
+			this.lastName = lastName || "";
+			this.address = address || "";
+			this.dateOfBirth = dateOfBirth || new Date();
+		}
 		isLegalAge():boolean{
 			return this.getAge() >= LegalAge;
 		}

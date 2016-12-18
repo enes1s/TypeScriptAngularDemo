@@ -25,13 +25,16 @@ module.exports = function(config) {
       './bower_components/moment/moment.js',    
 
       './client/app.module.js',    
+      './client/app.module.footer.js',    
       './client/app.route.js',    
       './client/services/accountservice.js',
       './client/services/dbservice.js',
+      './client/services/valueService.js',
       './client/models/account.js',
       
       './client/services/accountservice.test.js',
-      './client/models/account.test.js'
+      './client/models/account.test.js',
+      './client/services/footer.test.js'
     ],
 
 

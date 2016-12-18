@@ -11,7 +11,7 @@ module AppDemo {
 
 		static $inject = ["AccountService"];
 		constructor(private accountService: IAccountService) {
-			this.account = new Account;
+			this.account = new Account();
 			this.log = "";
 			this.maxDate = new Date();
 		}

@@ -13,7 +13,12 @@ module AppDemo {
                 templateUrl: "/client/views/accounts.html",
                 controller: "AccountsController",
                 controllerAs: "vm"
-            })            
+            })  
+            .when("/users", {
+                templateUrl: "/client/views/accounts.html",
+                controller: "UsersController",
+                controllerAs: "vm"
+            })                        
             .otherwise({
                 redirectTo: "/register"
             });

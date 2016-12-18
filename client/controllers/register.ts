@@ -8,13 +8,14 @@ module AppDemo {
 		private accounts : IAccount[];
 		private window;
 		public maxDate:Date;
-
+		public message:string;
 		static $inject = ["AccountService","$window"];
 		constructor(private accountService: IAccountService, $route) {
 			this.account = new Account();
 			this.log = "";
 			this.maxDate = new Date();
 			this.window = $route;
+			this.message = "";
 		}
 
 		submit() {
@@ -31,6 +32,10 @@ module AppDemo {
 					console.log(error);
 					this.log = error;
 				});
+		}
+		showMessage(){
+			console.log("messageShown");
+			this.message = "message is shown";
 		}
 
 	}
